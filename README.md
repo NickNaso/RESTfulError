@@ -1,7 +1,6 @@
 # RESTfulError
-When you implement a RESTful endpoint in Node.js you have handle the error in response.
-For example if you use expressjs to develop a webservice or a web application
-
+When you implement a RESTful endpoint in Node.js you have to handle the error in response.
+For example if you use expressjs to develop a webservice or a web application you use the pattern reported below:
 ```javascript
 //Import some required modules
 var BookCtrl = require('controllers/Book');
@@ -19,4 +18,5 @@ app.get("/books/:id", function(req, res, next){
     });
 });
 ```
-Every time your system generate an error you handle it and the correspinding response. The idea is to have a generi Error object that encapsulate all error types and dispacht it to a centralized error middleware.
+Every time your system generate an error you handle it and the corresponding response. The idea is to have a generic Error object that encapsulate all types of error and dispatch it to a centralized error middleware that will provide to generate the response.
+
