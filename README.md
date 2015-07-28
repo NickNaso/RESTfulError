@@ -1,6 +1,6 @@
 # RESTfulError
 When you implement a RESTful endpoint in Node.js you have to handle the error in response.
-For example if you use expressjs to develop a webservice or a web application you use the pattern reported below:
+For example if you use expressjs to develop a webservice or a web application you follow the pattern reported below:
 ```javascript
 //Import some required modules
 var BookCtrl = require('controllers/Book');
