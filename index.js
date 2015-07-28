@@ -6,7 +6,7 @@
  * http://www.apache.org/licenses/
  *
  * Contributors - initial API implementation:
- * Mauro Brasiliano, Nicola Del Gobbo, Vincenzo Villani
+ * Antonio D'Angelo, Mauro Brasiliano, Nicola Del Gobbo, Vincenzo Villani
  *****************************************************************************/
 
 'use strict';
