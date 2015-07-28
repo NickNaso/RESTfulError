@@ -3,6 +3,7 @@ When you implement a RESTful endpoint in Node.js you have handle the error in re
 For example if you use expressjs to develop a webservice or a web application
 
 ```javascript
+//Import some required modules
 var BookCtrl = require('controllers/Book');
 var express = require('express');
 var app = express();
