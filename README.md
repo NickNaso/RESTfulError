@@ -153,7 +153,7 @@ A server SHOULD return a response with this status code if a request included a 
 ### EXPECTATION_FAILED
 Status code | Error name | Error type | Reference
 ----- | ------------------------------------------------ | ------------------------------------------------ | -----------------------------
-417 | Expectation Failed | EXPECTATION_FAILED | [RFC7231, Section 6.5.14](http://tools.ietf.org/html/rfc7231){:target="_blank"}
+417 | Expectation Failed | EXPECTATION_FAILED | [RFC7231, Section 6.5.14](http://tools.ietf.org/html/rfc7231 target="_blank")
 
 ##### Description:
 The expectation given in an Expect request-header field could not be met by this server, or, if the server is a proxy, the server has unambiguous evidence that the request could not be met by the next-hop server.
