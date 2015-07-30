@@ -38,3 +38,27 @@ Status code | Error name | Error type | Reference
 ##### Description:
 The request requires user authentication. The response MUST include a WWW-Authenticate header field containing a challenge applicable to the requested resource. The client MAY repeat the request with a suitable Authorization header field. If the request already included Authorization credentials, then the 401 response indicates that authorization has been refused for those credentials. If the 401 response contains the same challenge as the prior response, and the user agent has already attempted authentication at least once, then the user SHOULD be presented the entity that was given in the response, since that entity might include relevant diagnostic information.
 
+### FORBIDDEN
+Status code | Error name | Error type | Reference
+----- | ------------------------------------------------ | ------------------------------------------------ | -----------------------------
+403 | Forbidden | FORBIDDEN | [RFC7231, Section 6.5.3](http://tools.ietf.org/html/rfc7231)
+
+##### Description:
+The server understood the request, but is refusing to fulfill it. Authorization will not help and the request SHOULD NOT be repeated. If the request method was not HEAD and the server wishes to make public why the request has not been fulfilled, it SHOULD describe the reason for the refusal in the entity. If the server does not wish to make this information available to the client, the status code 404 (Not Found) can be used instead.
+
+### NOT_FOUND
+Status code | Error name | Error type | Reference
+----- | ------------------------------------------------ | ------------------------------------------------ | -----------------------------
+404 | Not Found | NOT_FOUND | [RFC7231, Section 6.5.4](http://tools.ietf.org/html/rfc7231)
+
+##### Description:
+The server has not found anything matching the Request-URI. No indication is given of whether the condition is temporary or permanent. The 410 (Gone) status code SHOULD be used if the server knows, through some internally configurable mechanism, that an old resource is permanently unavailable and has no forwarding address. This status code is commonly used when the server does not wish to reveal exactly why the request has been refused, or when no other response is applicable.
+
+### METHOD_NOT_ALLOWED
+Status code | Error name | Error type | Reference
+----- | ------------------------------------------------ | ------------------------------------------------ | -----------------------------
+405 | Method Not Allowed | METHOD_NOT_ALLOWED | [RFC7231, Section 6.5.5](http://tools.ietf.org/html/rfc7231)
+
+##### Description:
+The method specified in the Request-Line is not allowed for the resource identified by the Request-URI. The response MUST include an Allow header containing a list of valid methods for the requested resource.
+
