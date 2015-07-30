@@ -93,3 +93,38 @@ Status code | Error name | Error type | Reference
 
 ##### Description:
 The request could not be completed due to a conflict with the current state of the resource. This code is only allowed in situations where it is expected that the user might be able to resolve the conflict and resubmit the request. The response body SHOULD include enough information for the user to recognize the source of the conflict. Ideally, the response entity would include enough information for the user or user agent to fix the problem; however, that might not be possible and is not required.
+
+### GONE
+Status code | Error name | Error type | Reference
+----- | ------------------------------------------------ | ------------------------------------------------ | -----------------------------
+410 | Gone | GONE | [RFC7231, Section 6.5.9](http://tools.ietf.org/html/rfc7231)
+
+##### Description:
+The requested resource is no longer available at the server and no forwarding address is known. This condition is expected to be considered permanent. Clients with link editing capabilities SHOULD delete references to the Request-URI after user approval. If the server does not know, or has no facility to determine, whether or not the condition is permanent, the status code 404 (Not Found) SHOULD be used instead. This response is cacheable unless indicated otherwise.
+
+### LENGTH_REQUIRED
+Status code | Error name | Error type | Reference
+----- | ------------------------------------------------ | ------------------------------------------------ | -----------------------------
+411 | Length Required | LENGTH_REQUIRED | [RFC7231, Section 6.5.10](http://tools.ietf.org/html/rfc7231)
+
+##### Description:
+The server refuses to accept the request without a defined Content- Length. The client MAY repeat the request if it adds a valid Content-Length header field containing the length of the message-body in the request message.
+
+### PRECONDITION_FAILED
+Status code | Error name | Error type | Reference
+----- | ------------------------------------------------ | ------------------------------------------------ | -----------------------------
+412 | Precondition Failed | PRECONDITION_FAILED | [RFC7232, Section 4.2](http://tools.ietf.org/html/rfc7232)
+
+##### Description:
+The precondition given in one or more of the request-header fields evaluated to false when it was tested on the server. This response code allows the client to place preconditions on the current resource metainformation (header field data) and thus prevent the requested method from being applied to a resource other than the one intended.
+
+### REQUEST_ENTITY_TOO_LARGE
+Status code | Error name | Error type | Reference
+----- | ------------------------------------------------ | ------------------------------------------------ | -----------------------------
+413 | Request Entity Too Large | REQUEST_ENTITY_TOO_LARGE | [RFC7231, Section 6.5.11](http://tools.ietf.org/html/rfc7231)
+
+##### Description:
+The server is refusing to process a request because the request entity is larger than the server is willing or able to process. The server MAY close the connection to prevent the client from continuing the request.
+
+
+
