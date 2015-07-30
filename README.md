@@ -148,5 +148,13 @@ Status code | Error name | Error type | Reference
 416 | Requested Range Not Satisfiable | REQUESTED_RANGE_NOT_SATISFIABLE | [RFC7233, Section 4.4](http://tools.ietf.org/html/rfc7233)
 
 ##### Description:
-A server SHOULD return a response with this status code if a request included a Range request-header field, and none of the range-specifier values in this field overlap the current extent of the selected resource, and the request did not include an If-Range request-header field. (For byte-ranges, this means that the first- byte-pos of all of the byte-range-spec values were greater than the current length of the selected resource.) When this status code is returned for a byte-range request, the response SHOULD include a Content-Range entity-header field specifying the current length of the selected resource. This response MUST NOT use the multipart/byteranges content- type.
+A server SHOULD return a response with this status code if a request included a Range request-header field, and none of the range-specifier values in this field overlap the current extent of the selected resource, and the request did not include an If-Range request-header field. (For byte-ranges, this means that the first- byte-pos of all of the byte-range-spec values were greater than the current length of the selected resource.) When this status code is returned for a byte-range request, the response SHOULD include a Content-Range entity-header field specifying the current length of the selected resource. This response MUST NOT use the multipart/byteranges content-type.
+
+### EXPECTATION_FAILED
+Status code | Error name | Error type | Reference
+----- | ------------------------------------------------ | ------------------------------------------------ | -----------------------------
+417 | Expectation Failed | EXPECTATION_FAILED | [RFC7231, Section 6.5.14](http://tools.ietf.org/html/rfc7231){:target="_blank"}
+
+##### Description:
+The expectation given in an Expect request-header field could not be met by this server, or, if the server is a proxy, the server has unambiguous evidence that the request could not be met by the next-hop server.
 
