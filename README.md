@@ -270,3 +270,76 @@ Status code | Error name | Error type | Reference
 ##### Description:
 This code is introduced to log the case when the connection is closed by client while HTTP server is processing its request, making server unable to send the HTTP header back.
 
+### INTERNAL_SERVER_ERROR
+Status code | Error name | Error type | Reference
+----- | ------------------------------------------------ | ------------------------------------------------ | -----------------------------
+500 | Internal Server Error | INTERNAL_SERVER_ERROR | [RFC7231, Section 6.6.1](http://tools.ietf.org/html/rfc7231)
+
+##### Description:
+The server encountered an unexpected condition which prevented it from fulfilling the request.
+
+### NOT_IMPLEMENTED
+Status code | Error name | Error type | Reference
+----- | ------------------------------------------------ | ------------------------------------------------ | -----------------------------
+501 | Not Implemented | NOT_IMPLEMENTED | [RFC7231, Section 6.6.2](http://tools.ietf.org/html/rfc7231)
+
+##### Description:
+The server does not support the functionality required to fulfill the request. This is the appropriate response when the server does not recognize the request method and is not capable of supporting it for any resource.
+
+### BAD_GATEWAY
+Status code | Error name | Error type | Reference
+----- | ------------------------------------------------ | ------------------------------------------------ | -----------------------------
+502 | Bad Gateway | BAD_GATEWAY | [RFC7231, Section 6.6.3](http://tools.ietf.org/html/rfc7231)
+
+##### Description:
+The server, while acting as a gateway or proxy, received an invalid response from the upstream server it accessed in attempting to fulfill the request.
+
+### SERVICE_UNAVAILABLE
+Status code | Error name | Error type | Reference
+----- | ------------------------------------------------ | ------------------------------------------------ | -----------------------------
+503 | Service Unavailable | SERVICE_UNAVAILABLE | [RFC7231, Section 6.6.4](http://tools.ietf.org/html/rfc7231)
+
+##### Description:
+The server is currently unable to handle the request due to a temporary overloading or maintenance of the server. The implication is that this is a temporary condition which will be alleviated after some delay. If known, the length of the delay MAY be indicated in a Retry-After header. If no Retry-After is given, the client SHOULD handle the response as it would for a 500 response.
+
+### GATEWAY_TIMEOUT
+Status code | Error name | Error type | Reference
+----- | ------------------------------------------------ | ------------------------------------------------ | -----------------------------
+504 | Gateway Timeout | GATEWAY_TIMEOUT | [RFC7231, Section 6.6.5](http://tools.ietf.org/html/rfc7231)
+
+##### Description:
+The server, while acting as a gateway or proxy, did not receive a timely response from the upstream server specified by the URI (e.g. HTTP, FTP, LDAP) or some other auxiliary server (e.g. DNS) it needed to access in attempting to complete the request.
+
+### HTTP_VERSION_NOT_SUPPORTED
+Status code | Error name | Error type | Reference
+----- | ------------------------------------------------ | ------------------------------------------------ | -----------------------------
+505 | HTTP Version Not Supported | HTTP_VERSION_NOT_SUPPORTED | [RFC7231, Section 6.6.6](http://tools.ietf.org/html/rfc7231)
+
+##### Description:
+The server does not support, or refuses to support, the HTTP protocol version that was used in the request message. The server is indicating that it is unable or unwilling to complete the request using the same major version as the client, as described in section 3.1, other than with this error message. The response SHOULD contain an entity describing why that version is not supported and what other protocols are supported by that server.
+
+### VARIANT_ALSO_NEGOTIATES
+Status code | Error name | Error type | Reference
+----- | ------------------------------------------------ | ------------------------------------------------ | -----------------------------
+506 | Variant Also Negotiates | VARIANT_ALSO_NEGOTIATES | [RFC2295](http://tools.ietf.org/html/rfc2295)
+
+##### Description:
+The 506 status code indicates that the server has an internal configuration error: the chosen variant resource is configured to engage in transparent content negotiation itself, and is therefore not a proper end point in the negotiation process.
+
+### INSUFFICIENT_STORAGE
+Status code | Error name | Error type | Reference
+----- | ------------------------------------------------ | ------------------------------------------------ | -----------------------------
+507 | Insufficient Storage (WebDAV) | INSUFFICIENT_STORAGE | [RFC4918](http://tools.ietf.org/html/rfc4918)
+
+##### Description:
+The 507 (Insufficient Storage) status code means the method could not be performed on the resource because the server is unable to store the representation needed to successfully complete the request. This condition is considered to be temporary. If the request that received this status code was the result of a user action, the request MUST NOT be repeated until it is requested by a separate user action.
+
+### LOOP_DETECTED
+Status code | Error name | Error type | Reference
+----- | ------------------------------------------------ | ------------------------------------------------ | -----------------------------
+508 | Loop Detected (WebDAV) | LOOP_DETECTED | [RFC5842](http://tools.ietf.org/html/rfc5842)
+
+##### Description:
+The 508 (Loop Detected) status code indicates that the server terminated an operation because it encountered an infinite loop while processing a request with Depth: infinity. This status indicates that the entire operation failed.
+
+
