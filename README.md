@@ -158,3 +158,115 @@ Status code | Error name | Error type | Reference
 ##### Description:
 The expectation given in an Expect request-header field could not be met by this server, or, if the server is a proxy, the server has unambiguous evidence that the request could not be met by the next-hop server.
 
+### I_AM_A_TEAPOT
+Status code | Error name | Error type | Reference
+----- | ------------------------------------------------ | ------------------------------------------------ | -----------------------------
+418 | I'm a teapoat (RFC 2324) | I_AM_A_TEAPOT | No reference
+
+##### Description:
+This code was defined in 1998 as one of the traditional IETF April Fools' jokes, in RFC 2324, Hyper Text Coffee Pot Control Protocol, and is not expected to be implemented by actual HTTP servers.
+
+### ENHANCE_YOUR_CALM
+Status code | Error name | Error type | Reference
+----- | ------------------------------------------------ | ------------------------------------------------ | -----------------------------
+420 | Enhance Your Calm | ENHANCE_YOUR_CALM | No reference
+
+##### Description:
+Returned by the API endpoint when the client is being rate limited. Likely a reference to this number's association with marijuana. Other services may wish to implement the 429 Too Many Requests response code instead.
+
+### UNPROCESSABLE_ENTITY
+Status code | Error name | Error type | Reference
+----- | ------------------------------------------------ | ------------------------------------------------ | -----------------------------
+422 | Unprocessable Entity | UNPROCESSABLE_ENTITY | [RFC4918](http://www.iana.org/go/rfc4918)
+
+##### Description:
+The 422 - Unprocessable Entity status code means the server understands the content type of the request entity (hence a 415 - Unsupported Media Type status code is inappropriate), and the syntax of the request entity is correct (thus a 400 - Bad Request status code is inappropriate) but was unable to process the contained instructions. For example, this error condition may occur if an XML request body contains well-formed (i.e., syntactically correct), but semantically erroneous, XML instructions.
+
+### LOCKED
+Status code | Error name | Error type | Reference
+----- | ------------------------------------------------ | ------------------------------------------------ | -----------------------------
+423 | Locked (WebDAV) | LOCKED | [RFC4918](http://tools.ietf.org/html/rfc4918)
+
+##### Description:
+The 423 (Locked) status code means the source or destination resource of a method is locked. This response SHOULD contain an appropriate precondition or postcondition code, such as 'lock-token-submitted' or 'no-conflicting-lock'.
+
+### FAILED_DEPENDENCY
+Status code | Error name | Error type | Reference
+----- | ------------------------------------------------ | ------------------------------------------------ | -----------------------------
+424 | Failed Dependency (WebDAV) | FAILED_DEPENDENCY | [RFC4918](http://tools.ietf.org/html/rfc4918)
+
+##### Description:
+The 424 (Failed Dependency) status code means that the method could not be performed on the resource because the requested action depended on another action and that action failed.
+
+### RESERVED_FOR_WEBDAV
+Status code | Error name | Error type | Reference
+----- | ------------------------------------------------ | ------------------------------------------------ | -----------------------------
+425 | Reserved for WebDAV | RESERVED_FOR_WEBDAV | No reference
+
+##### Description:
+Defined in drafts of WebDAV Advanced Collections Protocol, but not present in Web Distributed Authoring and Versioning (WebDAV) Ordered Collections Protocol.
+
+### UPGRADE_REQUIRED
+Status code | Error name | Error type | Reference
+----- | ------------------------------------------------ | ------------------------------------------------ | -----------------------------
+426 | Upgrade Required | UPGRADE_REQUIRED | [RFC7231, Section 6.5.15](http://tools.ietf.org/html/rfc7231)
+
+##### Description:
+Reliable, interoperable negotiation of Upgrade features requires an unambiguous failure signal. The 426 Upgrade Required status code allows a server to definitively state the precise protocol extensions a given resource must be served with.
+
+### PRECONDITION_REQUIRED
+Status code | Error name | Error type | Reference
+----- | ------------------------------------------------ | ------------------------------------------------ | -----------------------------
+428 | Precondition Required | PRECONDITION_REQUIRED | [RFC6585](http://tools.ietf.org/html/rfc6585)
+
+##### Description:
+The origin server requires the request to be conditional. Intended to prevent the LOST UPDATE PROBLEM, where a client GETs a resource's state, modifies it, and PUTs it back to the server, when meanwhile a third party has modified the state on the server, leading to a conflict.
+
+### TOO_MANY_REQUESTS
+Status code | Error name | Error type | Reference
+----- | ------------------------------------------------ | ------------------------------------------------ | -----------------------------
+429 | Too Many Requests | TOO_MANY_REQUESTS | [RFC6585](http://tools.ietf.org/html/rfc6585)
+
+##### Description:
+The 429 status code indicates that the user has sent too many requests in a given amount of time (rate limiting). The response representations SHOULD include details explaining the condition, and MAY include a Retry-After header indicating how long to wait before making a new request.
+
+### REQUEST_HEADER_FIELDS_TOO_LARGE
+Status code | Error name | Error type | Reference
+----- | ------------------------------------------------ | ------------------------------------------------ | -----------------------------
+431 | Request Header Fields Too Large | REQUEST_HEADER_FIELDS_TOO_LARGE | [RFC6585](http://tools.ietf.org/html/rfc6585)
+
+##### Description:
+The 431 status code indicates that the server is unwilling to process the request because its header fields are too large. The request MAY be resubmitted after reducing the size of the request header fields.
+
+### NO_RESPONSE
+Status code | Error name | Error type | Reference
+----- | ------------------------------------------------ | ------------------------------------------------ | -----------------------------
+444 | No Response | NO_RESPONSE | No reference
+
+##### Description:
+The server returns no information to the client and closes the connection (useful as a deterrent for malware).
+
+### RETRY_WITH
+Status code | Error name | Error type | Reference
+----- | ------------------------------------------------ | ------------------------------------------------ | -----------------------------
+449 | Retry With (Microsoft) | RETRY_WITH | No reference
+
+##### Description:
+A Microsoft extension. The request should be retried after performing the appropriate action.
+
+### BLOCKED_BY_WINDOWS_PARENTAL_CONTROLS
+Status code | Error name | Error type | Reference
+----- | ------------------------------------------------ | ------------------------------------------------ | -----------------------------
+450 | Blocked by Windows Parental Controls (Microsoft) | BLOCKED_BY_WINDOWS_PARENTAL_CONTROLS | No reference
+
+##### Description:
+A Microsoft extension. This error is given when Windows Parental Controls are turned on and are blocking access to the given webpage.
+
+### CLIENT_CLOSED_REQUEST
+Status code | Error name | Error type | Reference
+----- | ------------------------------------------------ | ------------------------------------------------ | -----------------------------
+499 | Client Closed Request | CLIENT_CLOSED_REQUEST | No reference
+
+##### Description:
+This code is introduced to log the case when the connection is closed by client while HTTP server is processing its request, making server unable to send the HTTP header back.
+
