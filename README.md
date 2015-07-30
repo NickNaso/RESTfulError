@@ -62,3 +62,34 @@ Status code | Error name | Error type | Reference
 ##### Description:
 The method specified in the Request-Line is not allowed for the resource identified by the Request-URI. The response MUST include an Allow header containing a list of valid methods for the requested resource.
 
+### NOT_ACCEPTABLE
+Status code | Error name | Error type | Reference
+----- | ------------------------------------------------ | ------------------------------------------------ | -----------------------------
+406 | Not Acceptable | NOT_ACCEPTABLE | [RFC7231, Section 6.5.6](http://tools.ietf.org/html/rfc7231)
+
+##### Description:
+The resource identified by the request is only capable of generating response entities which have content characteristics not acceptable according to the accept headers sent in the request.
+
+### PROXY_AUTHENTICATION_REQUIRED
+Status code | Error name | Error type | Reference
+----- | ------------------------------------------------ | ------------------------------------------------ | -----------------------------
+407 | Proxy Authentication Required | PROXY_AUTHENTICATION_REQUIRED | [RFC7235, Section 3.2](http://tools.ietf.org/html/rfc7235)
+
+##### Description:
+This code is similar to 401 (Unauthorized), but indicates that the client must first authenticate itself with the proxy. The proxy MUST return a Proxy-Authenticate header field containing a challenge applicable to the proxy for the requested resource. The client MAY repeat the request with a suitable Proxy-Authorization header field.
+
+### REQUEST_TIMEOUT
+Status code | Error name | Error type | Reference
+----- | ------------------------------------------------ | ------------------------------------------------ | -----------------------------
+408 | Request Timeout | REQUEST_TIMEOUT | [RFC7231, Section 6.5.7](http://tools.ietf.org/html/rfc7231)
+
+##### Description:
+The client did not produce a request within the time that the server was prepared to wait. The client MAY repeat the request without modifications at any later time.
+
+### CONFLICT
+Status code | Error name | Error type | Reference
+----- | ------------------------------------------------ | ------------------------------------------------ | -----------------------------
+409 | Conflict | CONFLICT | [RFC7231, Section 6.5.8](http://tools.ietf.org/html/rfc7231)
+
+##### Description:
+The request could not be completed due to a conflict with the current state of the resource. This code is only allowed in situations where it is expected that the user might be able to resolve the conflict and resubmit the request. The response body SHOULD include enough information for the user to recognize the source of the conflict. Ideally, the response entity would include enough information for the user or user agent to fix the problem; however, that might not be possible and is not required.
