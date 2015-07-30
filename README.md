@@ -126,5 +126,27 @@ Status code | Error name | Error type | Reference
 ##### Description:
 The server is refusing to process a request because the request entity is larger than the server is willing or able to process. The server MAY close the connection to prevent the client from continuing the request.
 
+### REQUEST_URI_TOO_LONG
+Status code | Error name | Error type | Reference
+----- | ------------------------------------------------ | ------------------------------------------------ | -----------------------------
+414 | Request-URI Too Long | REQUEST_URI_TOO_LONG | [RFC7231, Section 6.5.12](http://tools.ietf.org/html/rfc7231)
 
+##### Description:
+The server is refusing to service the request because the Request-URI is longer than the server is willing to interpret. This rare condition is only likely to occur when a client has improperly converted a POST request to a GET request with long query information, when the client has descended into a URI black hole of redirection (e.g., a redirected URI prefix that points to a suffix of itself), or when the server is under attack by a client attempting to exploit security holes present in some servers using fixed-length buffers for reading or manipulating the Request-URI.
+
+### UNSUPPORTED_MEDIA_TYPE
+Status code | Error name | Error type | Reference
+----- | ------------------------------------------------ | ------------------------------------------------ | -----------------------------
+415 | Unsupported Media Type | UNSUPPORTED_MEDIA_TYPE | [RFC7231, Section 6.5.13](http://tools.ietf.org/html/rfc7231)
+
+##### Description:
+The server is refusing to service the request because the entity of the request is in a format not supported by the requested resource for the requested method.
+
+### REQUESTED_RANGE_NOT_SATISFIABLE
+Status code | Error name | Error type | Reference
+----- | ------------------------------------------------ | ------------------------------------------------ | -----------------------------
+416 | Requested Range Not Satisfiable | REQUESTED_RANGE_NOT_SATISFIABLE | [RFC7233, Section 4.4](http://tools.ietf.org/html/rfc7233)
+
+##### Description:
+A server SHOULD return a response with this status code if a request included a Range request-header field, and none of the range-specifier values in this field overlap the current extent of the selected resource, and the request did not include an If-Range request-header field. (For byte-ranges, this means that the first- byte-pos of all of the byte-range-spec values were greater than the current length of the selected resource.) When this status code is returned for a byte-range request, the response SHOULD include a Content-Range entity-header field specifying the current length of the selected resource. This response MUST NOT use the multipart/byteranges content- type.
 
