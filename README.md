@@ -342,4 +342,42 @@ Status code | Error name | Error type | Reference
 ##### Description:
 The 508 (Loop Detected) status code indicates that the server terminated an operation because it encountered an infinite loop while processing a request with Depth: infinity. This status indicates that the entire operation failed.
 
+### BANDWIDTH_LIMIT_EXCEEDED
+Status code | Error name | Error type | Reference
+----- | ------------------------------------------------ | ------------------------------------------------ | -----------------------------
+509 | Bandwidth Limit Exceeded | BANDWIDTH_LIMIT_EXCEEDED | No reference
 
+##### Description:
+This status code, while used by many servers, is not specified in any RFCs.
+
+### NOT_EXTENDED
+Status code | Error name | Error type | Reference
+----- | ------------------------------------------------ | ------------------------------------------------ | -----------------------------
+510 | Not Extended | NOT_EXTENDED | [RFC2774](http://tools.ietf.org/html/rfc2774)
+
+##### Description:
+The policy for accessing the resource has not been met in the request. The server should send back all the information necessary for the client to issue an extended request. It is outside the scope of this specification to specify how the extensions inform the client.
+
+### NETWORK_AUTHENTICATION_REQUIRED
+Status code | Error name | Error type | Reference
+----- | ------------------------------------------------ | ------------------------------------------------ | -----------------------------
+511 | Network Authentication Required | NETWORK_AUTHENTICATION_REQUIRED | [RFC6585](http://tools.ietf.org/html/rfc6585)
+
+##### Description:
+The 511 status code indicates that the client needs to authenticate to gain network access. The response representation SHOULD contain a link to a resource that allows the user to submit credentials.
+
+### NETWORK_READ_TIMEOUT_ERROR
+Status code | Error name | Error type | Reference
+----- | ------------------------------------------------ | ------------------------------------------------ | -----------------------------
+598 | Network read timeout error | NETWORK_READ_TIMEOUT_ERROR | No reference
+
+##### Description:
+This status code is not specified in any RFCs, but is used by some HTTP proxies to signal a network read timeout behind the proxy to a client in front of the proxy.
+
+### NETWORK_CONNECT_TIMEOUT_ERROR
+Status code | Error name | Error type | Reference
+----- | ------------------------------------------------ | ------------------------------------------------ | -----------------------------
+599 | Network read timeout error | NETWORK_CONNECT_TIMEOUT_ERROR | No reference
+
+##### Description:
+This status code is not specified in any RFCs, but is used by some HTTP proxies to signal a network read timeout behind the proxy to a client in front of the proxy.
