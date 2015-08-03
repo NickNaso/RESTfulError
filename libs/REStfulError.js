@@ -404,6 +404,10 @@ function RESTfulError(options){
     // https://code.google.com/p/v8-wiki/wiki/JavaScriptStackTraceApi#Stack_trace_collection_for_custom_exceptions
     Error.captureStackTrace && Error.captureStackTrace(this, RESTfulError);
     this.name = 'RESTfulError';
+    var type = typeof options;
+    if(type === 'function' || type === 'object' && !!obj){
+        options = {};
+    }
     options.errorType = options.errorType || defaultOptions.errorType;
     options.HTTPStatusCode = options.HTTPStatusCode || defaultOptions.HTTPStatusCode;
     options.description = options.description || defaultOptions.description;
