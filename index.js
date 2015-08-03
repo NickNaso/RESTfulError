@@ -11,4 +11,4 @@
 
 'use strict';
 
-module.exports = require('./lib/RESTfulError');
+module.exports = require('./libs/RESTfulError');
