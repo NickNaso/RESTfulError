@@ -410,14 +410,14 @@ function RESTfulError(options){
     Error.captureStackTrace && Error.captureStackTrace(this, RESTfulError);
     this.name = 'RESTfulError';
     var type = typeof options;
-    if(type === 'function' || type === 'object' && !!options){
+    if(!options && (type !== 'function' || type !== 'object')){
         options = {};
     }
-    options.errorType = options.errorType || defaultOptions.errorType;
-    options.HTTPStatusCode = options.HTTPStatusCode || defaultOptions.HTTPStatusCode;
-    options.description = options.description || defaultOptions.description;
-    options.sourceError = options.sourceError || defaultOptions.sourceError;
-    options.message = options.message || defaultOptions.message;
+    this.errorType = options.errorType || defaultOptions.errorType;
+    this.HTTPStatusCode = options.HTTPStatusCode || defaultOptions.HTTPStatusCode;
+    this.description = options.description || defaultOptions.description;
+    this.sourceError = options.sourceError || defaultOptions.sourceError;
+    this.message = options.message || defaultOptions.message;
 };
 
 //RESTfulError.prototype.__proto__ = Error.prototype;
