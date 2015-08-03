@@ -1,4 +1,6 @@
 # RESTfulError
+#### RESTfulError is a utility class that help to generate error response in a webservice or a web application endpoint. 
+
 When you implement a RESTful endpoint in Node.js you have to handle the error in response.
 For example if you use expressjs to develop a webservice or a web application you follow the pattern reported below:
 ```javascript
@@ -18,7 +20,37 @@ app.get("/books/:id", function(req, res, next){
     });
 });
 ```
-Every time your system generate an error you handle it and the corresponding response. The idea is to have a generic Error object that encapsulate all types of error and dispatch it to a centralized error middleware that will provide to generate the response.
+Every time your system generate an error you handle it and the corresponding response. The idea is to have a generic Error object that encapsulate all types of error and dispatch it to a centralized error middleware that will provide to generate the response as reported below:
+```javascript
+//Import some required modules
+var BookCtrl = require('controllers/Book');
+var RESTfulError = require("RESTfulError");
+var express = require('express');
+var app = express();
+//Some other configuration for the express app
+//List of routes
+app.get("/books/:id", function(req, res, next){
+    BookCtrl.findBookById(req.params.id, function(err, res, next){
+        if(err){
+            var errorOpts = RESTfulError.getErrorTypes().INTERNAL_SERVER_ERROR;
+            errorOpts.sourceError = err;
+            return next(new RESTfulError(errorOtps));
+        } else {
+            res.status(200).json(res);
+        }
+    });
+});
+```
+In your error middleware you parse the error object and adapt your error response to be coherent with your rest or web application endpoint.
+
+#### Installation
+If you want use RESTfulError you have to install it. There are two methods for that:
+In your package.json add the following item: 
+RESTfulError: "*" 
+then digit npm install
+**OR**
+launch this command npm --save 
+
 
 ## Errors
 
