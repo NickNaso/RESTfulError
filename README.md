@@ -34,6 +34,7 @@ app.get("/books/:id", function(req, res, next){
         if(err){
             var errorOpts = RESTfulError.getErrorTypes().INTERNAL_SERVER_ERROR;
             errorOpts.sourceError = err;
+            errorOpts.message = "Your custom message for the error";
             return next(new RESTfulError(errorOtps));
         } else {
             res.status(200).json(res);
