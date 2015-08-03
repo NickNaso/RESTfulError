@@ -63,7 +63,7 @@ launch this command:
 
 **npm  RESTfulError --save**
 
-##### Below is reported the list of errors and theri descriptions that are currently manegad by the RETfulError class
+Below is reported the list of errors and theri descriptions that are currently manegad by the RETfulError class
 
 ## Errors
 
