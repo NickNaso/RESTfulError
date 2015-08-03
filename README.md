@@ -46,11 +46,24 @@ In your error middleware you parse the error object and adapt your error respons
 #### Installation
 If you want use RESTfulError you have to install it. There are two methods for that:
 In your package.json add the following item: 
-RESTfulError: "*" 
-then digit npm install
-**OR**
-launch this command npm --save 
 
+RESTfulError: "version"
+
+then digit **npm install**
+
+**Example**:
+
+RESTfulError: "*" for the latest version
+
+RESTfulError: "1.0.0" for the version 1.0.0
+
+**OR**
+
+launch this command:
+
+**npm  RESTfulError --save**
+
+#####Below is reported the list of errors and theri descriptions that are currently manegad by the RETfulError class
 
 ## Errors
 
