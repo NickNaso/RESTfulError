@@ -11,7 +11,9 @@
 
 'use strict';
 
-
+/**
+ *
+ */
 var errorTypes = {
     "BAD_REQUEST": {
         "errorType": "BAD_REQUEST",
@@ -382,6 +384,9 @@ var errorTypes = {
     }
 };
 
+/**
+ *
+ */
 var defaultOptions = {
     errorType: "UNKNOWN_INTERNAL_ERROR",
     HTTPStatusCode: 500,
@@ -392,10 +397,10 @@ var defaultOptions = {
 
 
 /**
- * RESTfulError constructor
- *
+ * Represents a RESTfulError
+ * @constructor
  * @param {Object} options
- * @inherits Error https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Error
+ * @inherits Error {@link https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Error}
  */
 function RESTfulError(options){
     Error.call(this);
@@ -405,7 +410,7 @@ function RESTfulError(options){
     Error.captureStackTrace && Error.captureStackTrace(this, RESTfulError);
     this.name = 'RESTfulError';
     var type = typeof options;
-    if(type === 'function' || type === 'object' && !!obj){
+    if(type === 'function' || type === 'object' && !!options){
         options = {};
     }
     options.errorType = options.errorType || defaultOptions.errorType;
@@ -422,5 +427,8 @@ RESTfulError.getErrorTypes = function(){
     return errorTypes;
 };
 
+/**
+ *
+ */
 module.exports = exports = RESTfulError;
 
