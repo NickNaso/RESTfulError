@@ -1,7 +1,7 @@
 {
   "name": "restful-error",
   "description": "Utility class to handle RESTful error.",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "author": "Nacios Technologies <info@nacios.it>",
   "contributors": [
     "Antonio D'Angelo <tonydangelo123@gmail.com>",

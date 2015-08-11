@@ -24,7 +24,7 @@ Every time your system generate an error you handle it and the corresponding res
 ```javascript
 //Import some required modules
 var BookCtrl = require('controllers/Book');
-var RESTfulError = require("RESTfulError");
+var RESTfulError = require("restful-error");
 var express = require('express');
 var app = express();
 //Some other configuration for the express app
@@ -47,23 +47,25 @@ In your error middleware you parse the error object and adapt your error respons
 #### Installation
 If you want use RESTfulError you have to install it. There are two methods for that:
 In your package.json add the following item: 
-
-RESTfulError: "version"
-
-then digit **npm install**
+```json
+"restful-error": "version"
+```
+then digit 
+```console
+npm install
+```
 
 **Example**:
-
-RESTfulError: "*" for the latest version
-
-RESTfulError: "1.0.0" for the version 1.0.0
-
+```json
+"restful-error": "*" for the latest version
+"restful-error": "1.0.0" for the version 1.0.0
+```
 **OR**
 
 launch this command:
-
-**npm  RESTfulError --save**
-
+```console
+npm install restful-error --save
+```
 #### Below is reported the list of errors and their descriptions that are currently maneged by the RETfulError class
 
 ## Errors
