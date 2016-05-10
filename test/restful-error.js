@@ -19,4 +19,14 @@
 
 'use strict';
 
-module.exports = require('./lib/RESTfulError');
+var RESTfulError = require('../');
+
+describe("Test restful-error utility class", function() {
+    it("Should export function", function() {
+
+    });
+
+
+
+
+});

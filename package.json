@@ -1,20 +1,24 @@
 {
   "name": "restful-error",
   "description": "Utility class to handle RESTful error.",
-  "version": "1.0.6",
-  "author": "Nacios Technologies <info@nacios.it>",
+  "version": "1.10.0",
+  "author": "Nicola Del Gobbo <n.delgobbo@nacios.it>",
   "contributors": [
-    "Antonio D'Angelo <tonydangelo123@gmail.com>",
-    "Mauro Brasiliano <m.brasiliano@nacios.it>",
-    "Nicola Del Gobbo <n.delgobbo@nacios.it>",
-    "Vincenzo Villani <v.villani@nacios.it>"
+    "Antonio D'Angelo <tonydangelo123@gmail.com>"
   ],
-  "licenses": [
-    {
-      "type": "Apache License Version 2.0",
-      "url": "http://www.apache.org/licenses/LICENSE-2.0"
-    }
+  "keywords": [
+    "error",
+    "rest",
+    "restful",
+    "api"
   ],
+  "license": "Apache-2.0",
+  "scripts": {
+    "test": "node_modules/jasmine/bin/jasmine.js JASMINE_CONFIG_PATH=test/jasmine.json"
+  },
+  "engines": {
+    "node": ">= 0.10.0"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/NickNaso/RESTfulError.git"
@@ -23,19 +27,14 @@
     "url": "https://github.com/NickNaso/RESTfulError/issues"
   },
   "homepage": "http://www.nacios.it/",
-  "keywords": [
-    "error",
-    "rest",
-    "restful",
-    "api"
-  ],
-  "engines": {
-    "node": ">= 0.10.0"
+  "devDependencies": {
+    "jasmine": "^2.4.1"
   },
   "files": [
     "LICENSE",
     "README.md",
+    "CHANGELOG.md",
     "index.js",
-    "libs/"
+    "lib/"
   ]
 }
